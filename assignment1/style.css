@@ -1,0 +1,84 @@
+/* https://colorhunt.co/palette/1a120b3c2a21d5cea3e5e5cb */
+
+body {
+    background-color: #0f0f0f;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow-x: hidden;
+  }
+
+.content{
+    margin: auto;
+    font-family:'Menlo';
+    color: #ffffff;
+    font-size: 1rem;
+    padding: 40px
+}
+.section {
+    height: 100vh;
+    width: 100vw;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+}
+
+#background {
+    background-image: url(background1.jpg);
+    
+}
+.h1 {
+    margin-left: 0px;
+
+}
+
+.h2 {
+    margin-left: 580px;
+    margin-top: 300px;
+}
+
+.h3 {
+    margin-left: 1300px;
+    margin-top: 300px;
+}
+a {
+    color: white; 
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-gap: 20px;
+    padding: 20px;
+}
+
+.question {
+    background-color: #100f0f;
+    padding: 10px;
+    border: 1px solid #363535;
+    transition: border-color 0.3s ease;
+    transition: background-color 0.3s ease;
+    color: #ffffff;
+    font-family:'Menlo';
+    text-align: justify;
+}
+
+.question:hover {
+    border-color: #c3c1c1;
+    background-color: #454444;
+}
+
+.Q1 { grid-area: 1 / 1 / 2 / 3; }
+.Q2 { grid-area: 1 / 3 / 2 / 5; }
+.Q3 { grid-area: 1 / 5 / 2 / 7; }
+.Q4 { grid-area: 2 / 1 / 3 / 3; }
+.Q5 { grid-area: 2 / 3 / 3 / 5; }
+.Q6 { grid-area: 2 / 5 / 3 / 7; }
+.Q7 { grid-area: 3 / 1 / 4 / 4; }
+.Q8 { grid-area: 3 / 4 / 4 / 7; }
+.Q9 { grid-area: 4 / 1 / 5 / 3; }
+.Q10 { grid-area: 4 / 3 / 5 / 5; }
+.Q11 { grid-area: 4 / 5 / 5 / 7; }
+.Q12 { grid-area: 5 / 1 / 6 / 4; }
+.Q13 { grid-area: 5 / 4 / 6 / 7; }
