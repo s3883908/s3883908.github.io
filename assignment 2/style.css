@@ -1,0 +1,165 @@
+:root {
+    --primary-bg-color: #000000;
+    /* I changed the primary color to black. 
+    I think the dark genre is more suitable for "music album" context  */
+    --text-color: #ffffff;
+    --main-bg-color: #616161;
+    --main-text-color: #fff;
+    --main-btn-bg-color: rgb(255, 255, 255);
+}
+    /* In order to make the content more prominent, 
+    I changed the font and content to white, which makes it easier for the viewer to read. */
+  
+ /* Header styling */
+header {
+    font-family:"Menlo" ;
+    color: var(--main-text-color);
+    font-size:20px;
+    text-align: right;
+    width: 100%;
+    padding-right: 70px;
+    position: fixed; /*  to stay at the top of the page as the page scrolls */
+    z-index: 1000;/* Make sure the header is above other content */
+}
+
+/* Navigation styling */
+nav {
+    position: fixed;
+    right: 0px;
+    top: 20px;
+    display: flex;
+    flex-direction: column;
+    padding-top: 160px;
+    z-index: 1000;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    width: 100%; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+nav ul li {
+    writing-mode: vertical-rl; /* Set text orientation to vertical */
+    margin: 10px;
+}
+
+nav ul li a {
+    font-family: "Menlo";
+    font-size: 15px;
+    color:var(--main-text-color);
+    text-decoration: none;
+}
+
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Make sure the main content takes the full height of the viewport */
+    margin: 0; /* Reset margin */
+}
+
+/* para styling */
+.main-p {
+    text-align:right;
+    padding: 30px; 
+    font-size: 22px;
+    color: #616161;
+}
+
+/* Image styling */
+.main-image {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    border: 2px solid #ffffff;
+    border-radius: 10px;
+}
+
+
+
+
+
+
+body {
+    font-family:'Menlo';
+    background-color: var(--primary-bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+  
+  /* Add additional styles as needed */
+  
+  /* Create a container for the main content */
+  .container {
+    max-width: 1000px;
+    width: 100%;
+    padding: 10px;
+  }
+  
+  
+  
+  /* Media player styling */
+  .media-player {
+    width: 100%;
+    margin: 0 auto;
+  }
+  
+  .media-player video {
+    max-width: 100%;
+  }
+  
+  .custom-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 10px;
+    width: 100%;
+  }
+  
+  .custom-controls button {
+    background-color: var(--main-btn-bg-color);
+    color: var(--main-text-color);
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .progress-bar {
+    width: 100%;
+    height: 10px;
+    background-color: #ddd;
+    margin-top: 10px;
+    overflow: hidden;
+  }
+  
+  .progress-bar span {
+    display: block;
+    height: 100%;
+    background-color: var(--main-bg-color);
+    width: 0;
+    transition: width 0.3s ease;
+  }
+  
+  /* Footer styling */
+  footer {
+    background-color: var(--main-bg-color);
+    color: var(--main-text-color);
+    text-align: center;
+    padding: 10px 0;
+    width: 100%;
+    font-size: 13px;
+  }
