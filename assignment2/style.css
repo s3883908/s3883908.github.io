@@ -1,0 +1,172 @@
+:root {
+    --primary-bg-color: #ffffff;
+    /* I changed the primary color to black. 
+    I think the dark genre is more suitable for "music album" context  */
+    --text-color: #000000;
+    --main-bg-color: #000000;
+    --main-text-color: #000000;
+    --main-btn-bg-color: rgb(255, 255, 255);
+    --text-color-light: #ffffff;
+}
+    /* In order to make the content more prominent, 
+    I changed the font and content to white, which makes it easier for the viewer to read */
+  
+body {
+    font-family:'Menlo';
+    background-color: var(--primary-bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0px;
+}
+
+ /* Header styling */
+header {
+    font-family:"Menlo";
+    color: var(--main-text-color);
+    font-size:10px;
+    text-align: left;
+    width: 100%;
+    padding-left: 70px;
+    padding-top: 30px;
+    letter-spacing: 60px;
+    position: fixed; /*  to stay at the top of the page as the page scrolls */
+    z-index: 1000;/* Make sure the header is above other content */
+    font-weight: lighter;
+}
+
+/* Make it apply the new font color when scrolling to the second section */
+header.light-text {
+  color: var(--text-color-light);
+}
+
+/* Navigation styling */
+nav {
+    position: fixed;
+    right: 0px;
+    top: 20px;
+    display: flex;
+    flex-direction: column;
+    padding-top: 160px;
+    z-index: 1000;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    width: 100%; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+nav ul li {
+    writing-mode: vertical-rl; /* Set text orientation to vertical */
+    margin: 10px;
+}
+
+nav ul li a {
+    font-family: "Menlo";
+    font-size: 18px;
+    color:var(--main-text-color);
+    text-decoration: none;
+}
+
+nav.light-text ul li a {
+  color: var(--text-color-light);  
+}
+
+.main-section1 {
+    max-width: 1000px;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    height: 100vh; /* Make sure the main content takes the full height of the viewport */
+    transition: transform 0.3s ease, filter 0.3s ease; /* Add transition for smooth effect */
+}
+
+/* para styling */
+.main-section1 .main-p {
+    text-align:left;
+    padding: 50px; 
+    font-size: 22px;
+    color: #8b8a8a;
+}
+
+/* Image styling */
+.main-section1 .main-image {
+    display: block;
+    max-width: 70%;
+    height: auto;
+    border: 2px solid #000000;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+/* Hover effect */
+.main-section1 .main-image:hover {
+  transform: scale(1.1); /* Scale the image */
+  filter: invert(100%); /* Convert image to invert */
+  /* Added some interactive designs to homepage */
+}
+
+/* Added a tag to make the web page look clear */
+.main-section1 .tag {
+    position: absolute;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    top: 48%; 
+    left: 10px; 
+    font-size: 200px; 
+    color: #0000000f; 
+}
+
+.main-section2 {
+  background-color:var(--main-bg-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.main-section2 .tag {
+  position: absolute;
+  font-family:Georgia, 'Times New Roman', Times, serif;
+  top: 148%; 
+  left: 10px; 
+  font-size: 200px; 
+  color: #ffffff22; 
+}
+
+/* Media player styling */
+.media-player {
+  max-width: 55%;
+  margin: 0 auto;
+  
+}
+
+.media-player video {
+    max-width: 100%;
+    opacity: 0;
+    transition: opacity 10s ease-in;
+}
+
+/* to hide the video, make the effect*/
+.media-player video.hidden {
+  opacity: 1;
+}
+
+  /* Footer styling */
+  footer {
+    background-color:#3b3b3b;
+    color: var(--main-text-color);
+    text-align: center;
+    width: 100%;
+    height: 100px;
+    font-size: 14px;
+    z-index: 500;
+    }
+    
