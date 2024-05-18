@@ -9,10 +9,11 @@ document.addEventListener("DOMContentLoaded", () => {
     video.removeAttribute("controls");
 
 //   play and pasue function
-    playPauseBtn.addEventListener("click", togglePlayPause);
-    video.addEventListener("timeupdate", updateProgressBar);
-    progressBar.addEventListener("click", seek);
-    fullscreenBtn.addEventListener("click", goFullscreen); 
+playPauseBtn.addEventListener("click", togglePlayPause);
+video.addEventListener("timeupdate", updateProgressBar);
+progressBar.addEventListener("click", seek);
+fullscreenBtn.addEventListener("click", goFullscreen);
+
   
     function togglePlayPause() {
       if (video.paused || video.ended) {
