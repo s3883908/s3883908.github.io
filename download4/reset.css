@@ -1,0 +1,125 @@
+body {
+    font-family:'Menlo';
+    background-color:black;
+    color: var(--text-color);
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0px;
+}
+
+nav {
+    position: fixed;
+    right: 0px;
+    top: 20px;
+    display: flex;
+    flex-direction: column;
+    padding-top: 160px;
+    z-index: 1000;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    width: 100%; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+nav ul li {
+    writing-mode: vertical-rl; /* Set text orientation to vertical */
+    margin: 10px;
+}
+
+nav ul li a {
+    font-family: "Menlo";
+    font-size: 18px;
+    color:white;
+    text-decoration: none;
+}
+
+nav.light-text ul li a {
+  color: var(--text-color-light);  
+}
+
+.main-section2 {
+   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .main-section2 .tag {
+    position: absolute;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    top: 48%; 
+    left: 10px; 
+    font-size: 200px; 
+    color: #ffffff22; 
+  }
+
+/* Media player styling */
+.media-player {
+    max-width: 55%;
+    margin: 0 auto;
+    
+  }
+
+.media-player video {
+    max-width: 100%;
+}
+
+
+/* controlers styling */
+.custom-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 10px;
+    width: 100%;
+  }
+  
+  .custom-controls button {
+    background-color: var(--main-btn-bg-color);
+    color: var(--main-text-color);
+    border: none;
+    padding: 0px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+  }
+  
+    .progress-bar {
+      width: 100%;
+      height: 10px;
+      background-color: #ddd;
+      margin-top: 10px;
+      overflow: hidden;
+    }
+    
+    .progress-bar span {
+      display: block;
+      height: 100%;
+      background-color:aquamarine;
+      width: 0;
+      transition: width 0.3s ease;
+    }
+    /* An element has been added, the progress bar can produce effects when the video is played. */
+    
+    /* Footer styling */
+    footer {
+      background-color:#3b3b3b;
+      color:white;
+      text-align: center;
+      width: 100%;
+      height: 100px;
+      font-size: 14px;
+      z-index: 500;
+      }
+  
