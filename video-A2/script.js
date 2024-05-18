@@ -5,7 +5,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const progressBarFill = document.querySelector("#progress-bar-fill");
     const progressBar = document.querySelector(".progress-bar");
     const fullscreenBtn = document.querySelector("#fullscreen-btn");
-    const fullscreenImg = document.querySelector("#fullscreen-img");
   
     video.removeAttribute("controls");
 
@@ -13,7 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
     playPauseBtn.addEventListener("click", togglePlayPause);
     video.addEventListener("timeupdate", updateProgressBar);
     progressBar.addEventListener("click", seek);
-    fullscreenBtn.addEventListener("click", toggleFullscreen);
+    fullscreenBtn.addEventListener("click", goFullscreen); 
   
     function togglePlayPause() {
       if (video.paused || video.ended) {
@@ -38,33 +37,11 @@ document.addEventListener("DOMContentLoaded", () => {
       video.currentTime = seekTime;
     }
   
-    
-    function toggleFullscreen() {
-      if (!document.fullscreenElement) {
-        if (video.requestFullscreen) {
+    function goFullscreen() {
+        if (!document.fullscreenElement) {
           video.requestFullscreen();
-        } else if (video.mozRequestFullScreen) { // Firefox
-          video.mozRequestFullScreen();
-        } else if (video.webkitRequestFullscreen) { // Chrome, Safari and Opera
-          video.webkitRequestFullscreen();
-        } else if (video.msRequestFullscreen) { // IE/Edge
-          video.msRequestFullscreen();
-        }
-        fullscreenImg.src = "icons8-exit-fullscreen-64.png"; // 假设您有一个退出全屏的图标
-      } else {
-        if (document.exitFullscreen) {
+        } else {
           document.exitFullscreen();
-        } else if (document.mozCancelFullScreen) { // Firefox
-          document.mozCancelFullScreen();
-        } else if (document.webkitExitFullscreen) { // Chrome, Safari and Opera
-          document.webkitExitFullscreen();
-        } else if (document.msExitFullscreen) { // IE/Edge
-          document.msExitFullscreen();
         }
-        fullscreenImg.src = "icons8-fullscreen-64.png"; // 恢复到全屏图标
       }
-    }
-  });
-  
-  
-
+    });
