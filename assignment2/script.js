@@ -1,4 +1,5 @@
 // video effect
+// I used the "if else" statement to create the effect of a video on the web page.
 window.addEventListener('scroll', function() {
     var section2 = document.getElementById('section2');
     var section2Top = section2.getBoundingClientRect().top;
@@ -13,6 +14,7 @@ window.addEventListener('scroll', function() {
   });
   
   //header and nav section color change 
+  // Navigation bar has different colors when passing through different backgrounds
   document.addEventListener("DOMContentLoaded", function() {
     const header = document.getElementById("header");
     const nav = document.getElementById("nav");

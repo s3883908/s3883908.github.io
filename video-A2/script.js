@@ -1,48 +1,62 @@
-document.addEventListener("DOMContentLoaded", () => {
-    const video = document.querySelector("#custom-video-player");
-    const playPauseBtn = document.querySelector("#play-pause-btn");
-    const playPauseImg = document.querySelector("#play-pause-img");
-    const progressBarFill = document.querySelector("#progress-bar-fill");
-    const progressBar = document.querySelector(".progress-bar");
-    const fullscreenBtn = document.querySelector("#fullscreen-btn");
-  
-    video.removeAttribute("controls");
+document.addEventListener("DOMContentLoaded", function() {
+  // 选择 play-pause 按钮
+  const playPauseButton = document.querySelector("#play-pause-btn");
+  const playPauseImg = document.querySelector("#play-pause-img");
+  const myVideo = document.querySelector("#custom-video-player");
+  const progressBarFill = document.querySelector("#progress-bar-fill");
+  const progressBar = document.querySelector(".progress-bar");
+  const fullscreenButton = document.querySelector("#fullscreen-btn");
 
-//   play and pasue function
-playPauseBtn.addEventListener("click", togglePlayPause);
-video.addEventListener("timeupdate", updateProgressBar);
-progressBar.addEventListener("click", seek);
-fullscreenBtn.addEventListener("click", goFullscreen);
+  // 添加事件监听器
+  playPauseButton.addEventListener("click", togglePlayPause);
+  myVideo.addEventListener("timeupdate", updateProgressBar);
+  progressBar.addEventListener("click", seek);
+  fullscreenButton.addEventListener("click", goFullscreen);
+  myVideo.addEventListener("dblclick", goFullscreen); 
 
-  
-    function togglePlayPause() {
-      if (video.paused || video.ended) {
-        video.play();
-        playPauseImg.src = "icons8-pause-64.png"; 
-      } else {
-        video.pause();
-        playPauseImg.src = "icons8-play-64.png"; 
+  // 播放/暂停功能
+  function togglePlayPause() {
+    if (myVideo.paused || myVideo.ended) {
+      playPauseImg.src = "icons8-pause-64.png";
+      myVideo.play();
+    } else {
+      playPauseImg.src = "icons8-play-64.png";
+      myVideo.pause();
+    }
+  }
+
+  // 更新进度条
+  function updateProgressBar() {
+    const progress = (myVideo.currentTime / myVideo.duration) * 100;
+    progressBarFill.style.width = progress + "%";
+  }
+
+  // 调整视频进度
+  function seek(e) {
+    const progressBarWidth = progressBar.clientWidth;
+    const clickX = e.offsetX;
+    const duration = myVideo.duration;
+    myVideo.currentTime = (clickX / progressBarWidth) * duration;
+  }
+
+  // 全屏功能
+  function goFullscreen() {
+    if (!document.fullscreenElement) {
+      if (myVideo.requestFullscreen) {
+        myVideo.requestFullscreen();
+      } else if (myVideo.webkitRequestFullscreen) {
+        myVideo.webkitRequestFullscreen();
+      }
+    } else {
+      if (document.exitFullscreen) {
+        document.exitFullscreen();
+      } else if (document.webkitExitFullscreen) {
+        document.webkitExitFullscreen();
       }
     }
-  
-    // progress bar function
-    function updateProgressBar() {
-      const value = (video.currentTime / video.duration) * 100;
-      progressBarFill.style.width = value + "%";
-    }
-  
-    function seek(e) {
-      const posX = e.offsetX;
-      const progressBarWidth = progressBar.clientWidth;
-      const seekTime = (posX / progressBarWidth) * video.duration;
-      video.currentTime = seekTime;
-    }
-  
-    function goFullscreen() {
-        if (!document.fullscreenElement) {
-          video.requestFullscreen();
-        } else {
-          document.exitFullscreen();
-        }
-      }
-    });
+  }
+});
+
+
+    // Not only did I make the navigation bar display according to the progress of the video,
+    //  I also designed the video progress to be adjusted through the progress bar

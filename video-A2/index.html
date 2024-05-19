@@ -28,41 +28,38 @@
       </ul>
     </nav>
 
-    <main class="container main-section2" id="section2">
-      <p class="tag">VIDEO</p>
+     <!-- Main Content Section -->
+     <main class="container">
+      <!-- Media Player Section -->
       <div class="media-player">
-        <video id="custom-video-player">
-          <source src="https://thelongesthumstore.sgp1.cdn.digitaloceanspaces.com/IM-2250/miac.mp4" 
-          type="video/mp4" />
-          Your browser does not support the video tag.
-      </video>
-        <div class="custom-controls">
-          <button id="play-pause-btn">
-            <!-- play and pasue button -->
-            <img 
-              id="play-pause-img"
-              src="icons8-play-64.png"
-              alt="Play Button"
-              width="64" 
-              height="64"
-            />
-          </button>
-            <!--full screnn button  -->
-          <button id="fullscreen-btn">
-            <img 
-              id="fullscreen-img"
-              src="icons8-full-screen-64.png"
-              alt="Fullscreen Button"
-              width="64" 
-              height="64"
-            />
-          </button>
-        <div class="progress-bar">
-          <span id="progress-bar-fill"></span>
-        </div>
+          <video id="custom-video-player" controls>
+              <source src="https://thelongesthumstore.sgp1.cdn.digitaloceanspaces.com/IM-2250/miac.mp4" 
+              type="video/mp4" />
+          </video>
 
+          <div class="custom-controls">
+              <button id="play-pause-btn">
+                  <img id="play-pause-img" 
+                  src="icons8-play-64.png" 
+                  alt="Play Button"
+                  width="64" 
+                  height="64" />
+              </button>
+
+              <button id="fullscreen-btn">
+                  <img id="fullscreen-img" 
+                  src="icons8-full-screen-64.png"
+                      alt="Fullscreen Button" 
+                      width="64" 
+                      height="64" />
+              </button>
+
+              <div class="progress-bar">
+                  <span id="progress-bar-fill"></span>
+              </div>
+          </div>
       </div>
-    </main>
+  </main>
     <!-- Footer Section -->
     <footer>
       <p>&copy; 2024 Music Album Website. All rights reserved.</p>
