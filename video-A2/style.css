@@ -112,7 +112,7 @@ nav.light-text ul li a {
       width: 0;
       transition: width 0.3s ease;
     }
-    /* An element has been added, the progress bar can produce effects when the video is played. */
+    /* the progress bar can produce effects when the video is played. */
     
     /* Footer styling */
     footer {
