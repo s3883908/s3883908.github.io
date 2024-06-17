@@ -1,0 +1,230 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    color: white;
+}
+
+
+/* Stylesheet for the animated title webpage.
+   This design uses a black background with white text for high contrast,
+   making it suitable for a technology-themed webpage. The 'Orbitron' font
+   from Google Fonts is chosen for its futuristic look, enhancing the theme.
+
+   This section defines the basic styling for the body element, setting
+   the background color to black and text color to white to ensure high contrast.
+*/
+
+.header {
+    text-align: center;
+    position: relative;
+    padding: 20px 0;
+}
+
+
+.header h1 {
+    margin: 100px;
+    font-size: 5em;
+    font-family: 'Orbitron', sans-serif;
+    position: relative;
+    color: #fff;
+    display: inline-block;
+}
+
+
+.header h1 span {
+    display: inline-block;
+    position: relative;
+    animation: float 3s infinite ease-in-out;
+}
+
+.header h1.hover span {
+    animation: none;
+    transform: translateY(0);
+}
+
+.header h2 {
+    position: absolute;
+    top: 20px;
+    left: 30px;
+    margin: 0;
+    font-family:'Menlo';
+    font-size: 1em;
+}
+
+/* Each letter of the title is wrapped in a span to apply floating animation.
+   The animation creates a smooth vertical floating effect, enhancing visual appeal.
+   On hover, the floating animation is paused and letters return to their original position.
+   This creates an interactive effect where the title stabilizes on hover.
+*/
+
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-40px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* 
+   In order to achieve the floating effect, 
+   I conducted experiments based on the code given by gpt.
+   Defines the floating animation keyframes.
+   The animation moves letters up and down, creating a floating effect.
+   In order to make the floating effect more obvious, I adjusted the range of movement is from 0 to -40 pixels.
+*/
+
+.content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0px;
+    padding: 0px;
+}
+
+.item {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgb(128, 128, 128);
+    height: 600px;
+}
+
+.item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: all 0.5s ease;
+}
+
+.item-text {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+    box-sizing: border-box;
+    z-index: 1;
+    font-family: 'Menlo';
+}
+
+.item-text .date {
+    align-self: flex-end;
+    text-align: right;
+}
+
+.item-text .title {
+    margin-top: auto;
+    text-align: left;
+}
+
+.item-text .link {
+    align-self: flex-start;
+    text-align: left;
+}
+
+.item-text .link a {
+    color: #f90cc6; 
+}
+
+.item-text p {
+    margin: 0;
+    font-size: 20px; /* 调整字体大小 */
+}
+
+.item-text p a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Effect 1: Blur */
+.effect1 img {
+    filter: blur(100px); 
+}
+
+.effect1:hover img {
+    filter: blur(0);
+    opacity: 1;
+}
+
+/* Effect 2: Follow mouse */
+.effect2 img {
+    transition: none; 
+    opacity: 0;
+    width: 800px;
+    height: auto;
+    position: fixed;
+    top: 50px;
+    left: 350px;
+    z-index: -10;
+}
+
+/* Effect 3: Image appear in the leftr */
+.effect3:hover img {
+    transform: none;
+    opacity: 1;
+    width: 800px;
+    height: auto;
+    position: fixed;
+    top: 50px;
+    z-index: -10;
+}
+
+/* Effect 4: Image rotate */
+.effect4 img {
+    transform: rotate(0deg);
+}
+
+.effect4:hover img {
+    transform: rotate(360deg);
+    opacity: 1;
+}
+
+/* Effect 5: Image full screen */
+.effect5:hover img {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 1200px;
+    height: 1000px;
+    object-fit: cover;
+    opacity: 1;
+    z-index:-10;
+    transform: translate(-50%, -50%);
+}
+
+/* Effect 6: Image slide from bottom */
+.effect6 img {
+    transform: translateY(100%);
+}
+
+.effect6:hover img {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/* I have divided the webpage into six distinct sections,
+ each designed to enhance interactivity through unique hover effects on images. 
+ In the first section, the image blurs and gradually comes into focus when hovered over, 
+ creating a striking visual transition. 
+ The second section features an image that follows the mouse cursor, 
+ offering a dynamic and engaging user experience. 
+ The third section has an image that appears from the left upon hovering, 
+ providing an unexpected and captivating visual. 
+ The fourth section includes an image that rotates 360 degrees, 
+ adding a sense of motion and excitement. 
+ In the fifth section, the image expands to full screen, 
+ allowing users to view it in greater detail. Lastly, 
+ the sixth section showcases an image sliding in from the bottom,
+  creating a smooth and elegant animation. 
+  These diverse effects collectively enhance the webpage’s interactivity, 
+  making it more engaging and visually appealing for users. */
